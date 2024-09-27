@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'JMETER_PATH', defaultValue: '/Users/evgeniygerasimov/Desktop/apache-jmeter-5.6.3', description: 'Path to JMeter')
+        string(name: 'JMETER_PATH', defaultValue: '/jmeter', description: 'Path to JMeter')
     }
     stages {
         stage('Checkout') {
