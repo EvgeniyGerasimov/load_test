@@ -12,7 +12,7 @@ pipeline {
         stage('Run JMeter Tests') {
             steps {
                 sh """
-                ${params.JMETER_PATH}/bin/jmeter -n -t load_test.jmx -l test_results.jtl
+                ${params.JMETER_PATH}/bin/jmeter -n -t swapi.jmx -l test_results.jtl
                 """
             }
         }
