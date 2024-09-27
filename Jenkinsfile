@@ -16,6 +16,11 @@ pipeline {
                 """
             }
         }
+        stage('Cleanup Report Directory') {
+            steps {
+                sh "rm -rf jmeter-report"
+            }
+        }
         stage('Generate HTML Report') {
             steps {
                 sh """
