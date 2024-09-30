@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'JMETER_PATH', defaultValue: '/jmeter', description: 'Path to JMeter')
+        string(name: 'JMETER_PATH', defaultValue: '/path/to/jmeter', description: 'Path to JMeter')
     }
     stages {
         stage('Checkout') {
@@ -16,13 +16,9 @@ pipeline {
                 """
             }
         }
-        stage('Cleanup Report Directory') {
+        stage('Generate Summary Report') {
             steps {
-                sh "rm -rf jmeter-report"
-            }
-        }
-        stage('Generate HTML Report') {
-            steps {
+                // Если у вас есть встроенный путь для генерации отчета
                 sh """
                 ${params.JMETER_PATH}/bin/jmeter -g test_results.jtl -o jmeter-report
                 """
@@ -31,8 +27,8 @@ pipeline {
         stage('Publish HTML Report') {
             steps {
                 publishHTML(target: [
-                    reportName : 'JMeter HTML Report',
-                    reportDir  : 'jmeter-report',
+                    reportName: 'JMeter HTML Report',
+                    reportDir: 'jmeter-report',
                     reportFiles: 'index.html',
                     alwaysLinkToLastBuild: true,
                     keepAll: true
