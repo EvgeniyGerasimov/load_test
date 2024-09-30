@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'JMETER_PATH', defaultValue: '/path/to/jmeter', description: 'Path to JMeter')
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -11,17 +8,17 @@ pipeline {
         }
         stage('Run JMeter Tests') {
             steps {
-                sh """
-                ${params.JMETER_PATH}/bin/jmeter -n -t swapi.jmx -l test_results.jtl
-                """
+                sh '/jmeter/bin/jmeter -n -t swapi.jmx -l test_results.jtl'
             }
         }
-        stage('Generate Summary Report') {
+        stage('Generate HTML Report') {
             steps {
-                // Если у вас есть встроенный путь для генерации отчета
-                sh """
-                ${params.JMETER_PATH}/bin/jmeter -g test_results.jtl -o jmeter-report
-                """
+                sh '/jmeter/bin/jmeter -g test_results.jtl -o jmeter-report'
+            }
+        }
+        stage('Publish Performance Report') {
+            steps {
+                perfReport(source: 'test_results.jtl')  // Укажите путь к вашему JTL файлу
             }
         }
         stage('Publish HTML Report') {
