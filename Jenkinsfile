@@ -18,7 +18,9 @@ pipeline {
         }
         stage('Publish Performance Report') {
             steps {
-                perfReport(source: 'test_results.jtl')  // Укажите путь к вашему JTL файлу
+                perfReport(parsers: [
+                    [parserName: 'jmeter', filePath: 'test_results.jtl']  // Укажите путь к вашему JTL файлу
+                ])
             }
         }
         stage('Publish HTML Report') {
