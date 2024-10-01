@@ -84,6 +84,7 @@
               <bytes>true</bytes>
               <sentBytes>true</sentBytes>
               <url>true</url>
+              <threadCounts>true</threadCounts>
               <idleTime>true</idleTime>
             </value>
           </objProp>
@@ -119,6 +120,7 @@
               <bytes>true</bytes>
               <sentBytes>true</sentBytes>
               <url>true</url>
+              <threadCounts>true</threadCounts>
               <idleTime>true</idleTime>
             </value>
           </objProp>
