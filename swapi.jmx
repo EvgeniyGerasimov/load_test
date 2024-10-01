@@ -85,7 +85,7 @@
               <idleTime>true</idleTime>
             </value>
           </objProp>
-          <stringProp name="filename">test_results.jtl</stringProp>
+          <stringProp name="filename">/Users/evgeniygerasimov/Desktop/apache-jmeter-5.6.3/bin/test_results.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
