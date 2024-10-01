@@ -60,13 +60,13 @@
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
-              <timestamp>true</timestamp>
+              <timestamp>false</timestamp>
               <success>false</success>
               <label>true</label>
               <code>true</code>
               <message>true</message>
               <threadName>true</threadName>
-              <dataType>true</dataType>
+              <dataType>false</dataType>
               <encoding>false</encoding>
               <assertions>false</assertions>
               <subresults>false</subresults>
@@ -79,12 +79,8 @@
               <responseDataOnError>false</responseDataOnError>
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
               <url>true</url>
-              <threadCounts>true</threadCounts>
               <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
             </value>
           </objProp>
           <stringProp name="filename">test_results.jtl</stringProp>
