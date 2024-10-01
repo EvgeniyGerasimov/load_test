@@ -63,7 +63,7 @@
               <time>true</time>
               <latency>true</latency>
               <timestamp>true</timestamp>
-              <success>false</success>
+              <success>true</success>
               <label>true</label>
               <code>true</code>
               <message>true</message>
@@ -96,7 +96,7 @@
               <time>true</time>
               <latency>true</latency>
               <timestamp>true</timestamp>
-              <success>false</success>
+              <success>true</success>
               <label>true</label>
               <code>true</code>
               <message>true</message>
